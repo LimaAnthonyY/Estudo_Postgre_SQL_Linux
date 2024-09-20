@@ -160,3 +160,10 @@ psql -p 5432                    # Conecta-se à versão 9.1
 pg_ctlcluster 9.3 main stop     # Para o cluster da versão 9.3
 psql -p 5434                    # Conecta-se à versão 9.5
 ```
+
+### O que foi visto nesta aula:
+- Estrutura de diretórios e criação de clusters PostgreSQL
+- Comandos essenciais para gerenciamento de clusters
+- Organização e uso dos databases padrão (postgres, template1, template0)
+- Criação e manipulação de clusters sem ferramentas adicionais
+- Gerenciamento de múltiplas versões de PostgreSQL e clusters
