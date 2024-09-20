@@ -78,7 +78,7 @@
      ```
    - Este comando pode gerar lock na tabela, por isso deve ser feito em uma janela de manutenção.
 
-O que foi visto nesta aula: 
+### O que foi visto nesta aula: 
 - Estrutura de diretórios
 - Databases
 - Schemas
