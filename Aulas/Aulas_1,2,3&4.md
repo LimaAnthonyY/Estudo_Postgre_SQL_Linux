@@ -161,9 +161,34 @@ pg_ctlcluster 9.3 main stop     # Para o cluster da versão 9.3
 psql -p 5434                    # Conecta-se à versão 9.5
 ```
 
+### **Aula 5: Estrutura de Arquivos e Diretórios do PostgreSQL**
+
+1. **Diretório `base`:**
+   - Armazena dados dos databases.
+   - Quando criamos um novo database, um diretório correspondente com um identificador único (OID) é gerado.
+   - Exemplo: O OID do database "teste" pode ser visualizado com o comando:
+     ```sql
+     SELECT oid FROM pg_database WHERE datname = 'teste';
+     ```
+     Depois, navegando no diretório `base`, podemos ver o diretório com o OID correspondente.
+
+2. **Diretórios adicionais:**
+   - **`pg_log`:** Armazena informações sobre transações e status dos commits.
+   - **`pg_commit_ts`:** Introduzido na versão 9.5, armazena timestamps de commit.
+   - **`pg_dynshmem`:** Utilizado a partir da versão 9.4 para arquivos relacionados à memória compartilhada.
+   - **`pg_stat`:** Contém informações estatísticas permanentes.
+   - **`pg_tblspc`:** Armazena links simbólicos para tablespaces.
+
+3. **Arquivos Importantes:**
+   - **`PG_VERSION`:** Informa a versão do PostgreSQL.
+   - **`postgresql.auto.conf`:** Contém configurações alteradas por comandos `ALTER SYSTEM`.
+   - **`postmaster.pid`:** Armazena o PID do processo do PostgreSQL enquanto o sistema está em execução.
+
 ### O que foi visto nesta aula:
 - Estrutura de diretórios e criação de clusters PostgreSQL
 - Comandos essenciais para gerenciamento de clusters
 - Organização e uso dos databases padrão (postgres, template1, template0)
 - Criação e manipulação de clusters sem ferramentas adicionais
 - Gerenciamento de múltiplas versões de PostgreSQL e clusters
+- Estrutura de diretórios
+- Databases
